@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp.sp
+--cpu=Cortex-M4.fp
 ".\robocon2024_cqupt\startup_stm32f427xx.o"
 ".\robocon2024_cqupt\main.o"
 ".\robocon2024_cqupt\gpio.o"
@@ -70,6 +70,6 @@
 ".\robocon2024_cqupt\cevent.o"
 ".\robocon2024_cqupt\cpost.o"
 --strict --scatter ".\ROBOCON2024_CQUPT\ROBOCON2024_CQUPT.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "ROBOCON2024_CQUPT.map" -o .\ROBOCON2024_CQUPT\ROBOCON2024_CQUPT.axf

@@ -872,13 +872,13 @@ ARM Macro Assembler    Page 14
               00001200 
               00000800 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
-interwork --depend=.\robocon2024_cqupt\startup_stm32f427xx.d -o.\robocon2024_cq
-upt\startup_stm32f427xx.o -I../Core/Inc -I.\RTE\_ROBOCON2024_CQUPT -IC:\Keil_v5
-\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4
-xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISION_
-VERSION SETA 536" --predefine="_RTE_ SETA 1" --predefine="STM32F427xx SETA 1" -
--predefine="_RTE_ SETA 1" --list=startup_stm32f427xx.lst startup_stm32f427xx.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\robocon2024_cqupt\startup_stm32f427xx.d -o.\robocon2024_cqupt
+\startup_stm32f427xx.o -I../Core/Inc -IE:\gitdesk\project\Infantry\MDK-ARM\RTE\
+_ROBOCON2024_CQUPT -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -ID:\Kei
+l_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Inclu
+de --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 1" --predef
+ine="STM32F427xx SETA 1" --list=startup_stm32f427xx.lst startup_stm32f427xx.s
 
 
 

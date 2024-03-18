@@ -52,7 +52,7 @@ SemaphoreHandle_t xMutex_Usart1;
 osThreadId_t testTaskHandle;
 const osThreadAttr_t testTask_attributes = {
   .name = "testTask",
-  .stack_size = 128 * 8,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for chassisTask */
@@ -80,7 +80,7 @@ const osThreadAttr_t solenoidTask_attributes = {
 osThreadId_t YuntaiTaskHandle;
 const osThreadAttr_t YuntaiTask_attributes = {
   .name = "YuntaiTask",
-  .stack_size = 128 * 8,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for motorTask */

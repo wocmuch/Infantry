@@ -38,28 +38,34 @@ void motor_task(void const * argument)
 			my_rc.vw=-(1500);
 		}
 		
-		//my_rc.pitch_target+=rc.ch3/40.f*0.01;
+		my_rc.pitch_speed=rc.ch3/10;
+		if(my_rc.pitch_target>100)my_rc.pitch_target=100;else if(my_rc.pitch_target<-100) my_rc.pitch_target=-100;else my_rc.pitch_target=my_rc.pitch_target;
 		my_rc.pitch_target=rc.ch13/10.f;
 		
 		my_rc.yaw_speed=rc.ch4/10.f;
 		
 		my_rc.yaw_target=rc.ch4/40.f;
 		
-		if(rc.ch12==1)
-			my_rc.shot_frequency=100;
-		else 
-			my_rc.shot_frequency=0;
-		
+		if(rc.ch11==3){
+			my_rc.shot_frequency=00;
+			my_rc.shot_speed=0;
+		}
+		else if(rc.ch11==2)
+		{
+			my_rc.shot_frequency=00;
+			my_rc.shot_speed=1;
+		}else
+		{
+			my_rc.shot_frequency=60;
+			my_rc.shot_speed=1;
+		}
 //		//Ðý×ª	Ð¡ÍÓÂÝ 
 	
 		
 		
 		//·¢Éä ·À¿¨µ¯
-		if(my_rc.shot_frequency==0){
-			DJ_Set_Motor_Speed(DJ_CAN2_M0,0,DJ_M3508);
-			DJ_Set_Motor_Speed(DJ_CAN2_M1,0,DJ_M3508); 
-			DJ_Set_Motor_Speed(DJ_CAN2_M2,0,DJ_M2006);
-		}else{
+		if(my_rc.shot_speed==1){
+
 			#define abs(x)        ((x>0)? (x): (-x))
 			DJ_Set_Motor_Speed(DJ_CAN2_M0,abs(k_shot_speed),DJ_M3508);
 			DJ_Set_Motor_Speed(DJ_CAN2_M1,(-1)*abs(k_shot_speed),DJ_M3508);
@@ -84,6 +90,10 @@ void motor_task(void const * argument)
 			}else{
 				DJ_Set_Motor_Speed(DJ_CAN2_M2,my_rc.shot_frequency*0.8,DJ_M2006);
 			}
+		}else
+		{
+			DJ_Set_Motor_Speed(DJ_CAN2_M0,0,DJ_M3508);
+			DJ_Set_Motor_Speed(DJ_CAN2_M1,0,DJ_M3508);		
 		}
 		
 		dj_motor_handler(5,2);

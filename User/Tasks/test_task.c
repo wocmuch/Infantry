@@ -46,8 +46,9 @@ void test_task(void const * argument)
 	while(1)
 	{	
 		//AHRSData2PC();
-		elog_raw_output("%d,%d,%d\n",my_rc.armer_flag,my_rc.error_x,my_rc.error_y);
-		//elog_raw_output(" %d,%d,%d,%d,%d,%d \n",my_rc.vy,my_rc.vx,my_rc.vw,my_rc.yaw_speed,my_rc.pitch_speed,my_rc.shot_frequency);
+		elog_raw_output("%d\n",HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0));
+		//elog_raw_output("%d,%d,%d\n",my_rc.armer_flag,my_rc.error_x,my_rc.error_y);
+		//elog_raw_output(" %.2f,%.2f \n",my_rc.pitch_target,DJ_Get_Motor_Position(DJ_CAN2_6020_M5,DJ_M6020));
 		osDelay(200);
 		
 		

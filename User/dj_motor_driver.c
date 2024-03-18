@@ -617,10 +617,10 @@ int dj_motor_init(void)
 	//////////////////
 	//for 6020 pid
 		PID_Init(&motor_can1_speed_pid[DJ_CAN1_6020_M6 ],PID_POSITION_NULL,512.5f,0.0f,0.0f);
-		PID_Init(&motor_can1_pos_pid[DJ_CAN1_6020_M6],PID_POSITION_NULL,0.125,0.000000395f,0.5f );
+		PID_Init(&motor_can1_pos_pid[DJ_CAN1_6020_M6],PID_POSITION_NULL,0.125f,0.000000395f,0.5f );
 	
-		PID_Init(&motor_can2_speed_pid[DJ_CAN2_6020_M5-DJ_MOTOR_NUMBER],PID_POSITION_NULL,512.5f,0.0f,0.0f);
-		PID_Init(&motor_can2_pos_pid[DJ_CAN2_6020_M5-DJ_MOTOR_NUMBER],PID_POSITION_NULL,0.125f,0.0f,0.0f);
+		PID_Init(&motor_can2_speed_pid[DJ_CAN2_6020_M5-DJ_MOTOR_NUMBER],PID_POSITION_NULL,475.5f,0.0f,0.05f);
+		PID_Init(&motor_can2_pos_pid[DJ_CAN2_6020_M5-DJ_MOTOR_NUMBER],PID_POSITION_NULL,0.175f,0.00003f,0.005f);
 	///////////////////
     return 0;
 }
